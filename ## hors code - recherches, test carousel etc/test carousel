@@ -1,0 +1,89 @@
+<!-- HTML -->
+
+<div class="carousel">
+  <div class="arrow left-arrow">&lt;</div>
+  <div class="pages-container">
+    <div class="page">
+      <img src="image1.jpg" alt="Image 1">
+    </div>
+  </div>
+  <div class="pages-container">
+    <div class="page">
+      <img src="image2.jpg" alt="Image 2">
+    </div>
+    <div class="page">
+      <img src="image3.jpg" alt="Image 3">
+    </div>
+  </div>
+  <div class="pages-container">
+    <div class="page">
+      <img src="image4.jpg" alt="Image 4">
+    </div>
+    <div class="page">
+      <img src="image5.jpg" alt="Image 5">
+    </div>
+  </div>
+  <div class="arrow right-arrow">&gt;</div>
+</div>
+
+
+<!-- CSS -->
+
+/* ... Autres styles précédents ... */
+
+.pages-container {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 1s;
+  opacity: 0; /* Pour cacher les conteneurs de pages */
+}
+
+.pages-container.visible {
+  opacity: 1;
+}
+
+.pages-container:nth-child(2) {
+  transform: translate(-50%, -50%) translateX(-100%);
+}
+
+.pages-container:nth-child(3) {
+  transform: translate(-50%, -50%) translateX(-200%);
+}
+
+/* ... Styles des flèches précédentes ... */
+
+
+<!-- JAVASCRIPT -->
+
+/* ... JavaScript précédent ... */
+
+let currentPage = 0;
+const pagesContainers = document.querySelectorAll('.pages-container');
+
+function updateCarousel() {
+  pagesContainers.forEach((container, index) => {
+    if (index === currentPage) {
+      container.classList.add('visible');
+    } else {
+      container.classList.remove('visible');
+    }
+  });
+  carousel.style.transform = `rotateY(${rotation}deg)`;
+}
+
+rightArrow.addEventListener('click', () => {
+  currentPage = Math.min(currentPage + 1, pagesContainers.length - 1);
+  rotation -= 60;
+  updateCarousel();
+});
+
+leftArrow.addEventListener('click', () => {
+  currentPage = Math.max(currentPage - 1, 0);
+  rotation += 60;
+  updateCarousel();
+});
+
+updateCarousel(); // Initialisation du carousel

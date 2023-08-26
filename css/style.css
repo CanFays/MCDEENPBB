@@ -1,0 +1,43 @@
+
+/* Colors
+light-green: #B5C9C0;
+pink: #DBD5CA;
+whitish: #E8E6DA;
+brick: #CA503E;
+yellow: #FFC164;
+dark-green: #82978D;
+
+    Alveoli:
+alveolus-purple: #BBB2CE;
+alveolus-green: #ADBBBB;
+alveolus-red: #CB9DA1;
+*/
+
+/* Fonts
+
+@font-face {
+  font-family: 'Lilita';
+  src: url('/fonts/Lilita.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Medula';
+  src: url('/fonts/Medula.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ZillaSlab';
+  src: url('/fonts/ZillaSlab.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'MaPolice', sans-serif; /* Utilisez le nom défini dans font-family pour appliquer la police au texte
+}
+
+*/
