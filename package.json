@@ -10,6 +10,7 @@
     "sass": "^1.66.1"
   },
     "scripts": {
-    "compile": "sass css/main.scss css/main.css --watch"
+    "compile": "sass css/main.scss css/main.css --watch",
+    "server": "http-server"
   }
 }
