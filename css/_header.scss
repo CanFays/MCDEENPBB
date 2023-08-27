@@ -1,0 +1,25 @@
+@use "colors";
+@use "fonts";
+@use "themes";
+
+header {
+  @extend .green-theme;
+  padding: 2vh;
+  border-radius: 12px 12px 0 0;
+  display: grid;
+
+  .header__centered-items {
+    font-family: 'Lilita';
+
+    img {
+      width: 5rem;
+    }
+    // .header__title {
+    // }
+  }
+
+  .header__nav {
+   color: colors.$dark-green;
+  }
+}
+

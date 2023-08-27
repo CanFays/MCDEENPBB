@@ -1,0 +1,15 @@
+@use "colors";
+@use "fonts";
+
+.green-theme {
+  background-color: colors.$light-green;
+  color: colors.$whitish;
+}
+
+.pink-theme {
+  background-color: colors.$pink;
+}
+
+.white-theme {
+  background-color: colors.$whitish;
+}

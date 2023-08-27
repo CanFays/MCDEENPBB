@@ -5,5 +5,11 @@
   "repository": "git@github.com:CanFays/MCDEENPBB.git",
   "author": "candice.fays@ymail.com <candice.fays@ymail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "sass": "^1.66.1"
+  },
+    "scripts": {
+    "compile": "sass css/main.scss css/main.css --watch"
+  }
 }
