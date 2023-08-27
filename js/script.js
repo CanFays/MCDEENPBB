@@ -1,3 +1,62 @@
+console.log('script.js chargé');
+
+// Lottie animation reader
+
+const giveMeFun = () => {
+  console.log('giveMeFun chargée');
+  const animationNameAndID = ['mobile'];
+  
+  animationNameAndID.forEach((xx) => {
+    const path = `../elements/images/${xx}.json`;
+    const location = document.getElementById(xx);
+    if (location && path) {
+      const animation = bodymovin.loadAnimation({
+        container: location,
+        renderer: 'svg',
+        loop: true,
+        autoplay: false,
+        path: path
+      });
+      return animation;
+    }
+  });
+}
+
+giveMeFun();
+
+// let animationNameAndID = 'mobile';
+
+// const giveMeFun = async (animationNameAndID) => {
+//   console.log('giveMeFun chargée');
+
+//   try {
+//     const response = await fetch(`../elements/animations/${animationNameAndID}.json`);
+//     if (!response.ok) {
+//       throw new Error('Erreur de chargement du fichier JSON');
+//     }
+//     const animationData = await response.json();
+
+//     const animation = bodymovin.loadAnimation({
+//       container: document.getElementById(animationNameAndID),
+//       renderer: 'svg',
+//       loop: true,
+//       autoplay: false,
+//       animationData: animationData
+//     });
+
+//     return animation;
+//   } catch (error) {
+//     console.error('Erreur:', error);
+//     return null; // Ou faites quelque chose en cas d'erreur
+//   }
+// }
+
+
+
+
+
+
+          
           // Chargement des partials dans la section asked-section
 // TODO: add event listener on click on the alveolus to load the asked section
 
