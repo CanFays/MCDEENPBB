@@ -1,0 +1,79 @@
+.alert {
+  color: #CA503E;
+}
+
+@font-face {
+  font-family: "Lilita";
+  src: url("../elements/fonts/Lilita.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Medula";
+  src: url("../elements/fonts/Medula.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ZillaSlab";
+  src: url("../elements/fonts/ZillaSlab.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.green-theme, footer, header {
+  background-color: #B5C9C0;
+  color: #E8E6DA;
+}
+
+.pink-theme {
+  background-color: #DBD5CA;
+}
+
+.white-theme {
+  background-color: #E8E6DA;
+}
+
+header {
+  padding: 2vh;
+  border-radius: 12px 12px 0 0;
+  display: grid;
+}
+header .header__centered-items {
+  font-family: "Lilita";
+}
+header .header__centered-items img {
+  width: 5rem;
+}
+header .header__nav {
+  color: #82978D;
+}
+
+footer {
+  padding: 5vh;
+  border-radius: 0 0 12px 12px;
+}
+
+html {
+  padding: 2vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  font-family: "ZillaSlab";
+}
+body ul {
+  list-style: none;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=main.css.map */
