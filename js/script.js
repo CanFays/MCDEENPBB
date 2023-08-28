@@ -3,7 +3,6 @@ console.log('script.js chargé');
 // Lottie animation reader
 
 const giveMeFun = (animationNameAndID) => {
-  console.log('giveMeFun chargée');
   const path = `../elements/images/${animationNameAndID}.json`;
   const location = document.getElementById(animationNameAndID);
 
@@ -17,15 +16,19 @@ const giveMeFun = (animationNameAndID) => {
   return animation;
 }
 
+console.log('giveMeFun active');
 giveMeFun('mobile');
-
-
-
-
+// giveMeFun('bear');
+// giveMeFun('cat');
+// giveMeFun('watermelon');
+// giveMeFun('poele');
+// giveMeFun('calandar');
 
 
 
           // Chargement des partials dans la section asked-section
+
+          
 // TODO: add event listener on click on the alveolus to load the asked section
 
 // addEventListener du click sur chaque .nav--listening
