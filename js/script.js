@@ -26,9 +26,42 @@ giveMeFun('mobile');
 
 
 
-          // Chargement des partials dans la section asked-section
+// Chargement des partials dans la section asked-section
 
-          
+const sectionsList = ['map', 'notice', 'contact', 'photos', 'timeline']
+const navListening = document.querySelectorAll('.nav--listening');
+
+
+const fetchAskedPartial = (sectionName) => {
+const askedSection = document.getElementById('main__asked-section');
+          fetch(`./_${sectionName}.html`)
+          .then(response => response.text())
+          .then(content => askedSection.innerHTML = content);
+}
+
+const loadingAskedPartial = (sectionWanted) => {
+  const askedSection = document.getElementById('main__asked-section');
+  askedSection.innerHTML = '';
+  fetchAskedPartial(sectionWanted);
+}
+
+const isolateClickedClass = (clk) => {
+  const clickedClasses = Array.from(clk.classList);
+  console.log("array clickedClasses", clickedClasses);
+  const clickedClass = clickedClasses.find(cls => sectionsList.includes(cls));
+  return clickedClass;
+}
+
+navListening.forEach((nav) => {
+  nav.addEventListener('click', event => {
+    const clickedElement = event.target;
+    console.log("clickedElement", clickedElement);
+    const clickedClass = isolateClickedClass(clickedElement);
+    loadingAskedPartial(clickedClass);
+  });
+});
+
+
 // TODO: add event listener on click on the alveolus to load the asked section
 
 // addEventListener du click sur chaque .nav--listening
@@ -69,6 +102,7 @@ giveMeFun('mobile');
 
 </body>
 </html> */
+
 
 
 
