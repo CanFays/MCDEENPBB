@@ -20,6 +20,10 @@
   font-weight: normal;
   font-style: normal;
 }
+.underline {
+  text-decoration: underline dotted;
+}
+
 .green-theme, .main__nav-section, footer, header {
   background-color: #B5C9C0;
   color: #E8E6DA;
@@ -348,6 +352,10 @@ body {
 }
 body ul {
   list-style: none;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
 }
 
 main {
