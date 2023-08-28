@@ -66,13 +66,13 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
-  transform: translateY(17.1875px);
+  transform: translateY(18.975px);
 }
 .honeycomb-cell {
-  flex: 0 1 125px;
-  max-width: 125px;
-  height: 68.75px;
-  margin: 32.7380952381px 5px 10px;
+  flex: 0 1 138px;
+  max-width: 138px;
+  height: 75.9px;
+  margin: 36.1428571429px 6px 12px;
   position: relative;
   padding: 0.5em;
   text-align: center;
@@ -89,8 +89,9 @@ footer {
   color: #ca503e;
   font-family: "Lilita";
   font-weight: 700;
-  font-size: 17px;
+  font-size: 18px;
   text-shadow: 0 0 0.5em #040404;
+  letter-spacing: 1px;
   transition: opacity 350ms;
 }
 .honeycomb-cell__title > small {
@@ -135,41 +136,41 @@ footer {
 .honeycomb__placeholder {
   display: none;
   opacity: 0;
-  width: 125px;
-  margin: 0 5px;
+  width: 138px;
+  margin: 0 6px;
 }
 
-@media (max-width: 270px) {
+@media (max-width: 300px) {
   .honeycomb-cell {
-    margin: 39.375px 10px;
+    margin: 43.95px 12px;
   }
 }
-@media (min-width: 270px) and (max-width: 405px) {
+@media (min-width: 300px) and (max-width: 450px) {
   .honeycomb-cell:nth-child(3n) {
-    margin-right: calc(50% - 62.5px);
-    margin-left: calc(50% - 62.5px);
+    margin-right: calc(50% - 69px);
+    margin-left: calc(50% - 69px);
   }
   .honeycomb__placeholder:nth-child(3n+5) {
     display: block;
   }
 }
-@media (min-width: 405px) and (max-width: 540px) {
+@media (min-width: 450px) and (max-width: 600px) {
   .honeycomb-cell:nth-child(5n+4) {
-    margin-left: calc(50% - 135px);
+    margin-left: calc(50% - 150px);
   }
   .honeycomb-cell:nth-child(5n+5) {
-    margin-right: calc(50% - 135px);
+    margin-right: calc(50% - 150px);
   }
   .honeycomb__placeholder:nth-child(5n), .honeycomb__placeholder:nth-child(5n+3) {
     display: block;
   }
 }
-@media (min-width: 540px) {
+@media (min-width: 600px) {
   .honeycomb-cell:nth-child(7n+5) {
-    margin-left: calc(50% - 197.5px);
+    margin-left: calc(50% - 219px);
   }
   .honeycomb-cell:nth-child(7n+7), .honeycomb-cell:nth-child(7n+5):nth-last-child(2) {
-    margin-right: calc(50% - 197.5px);
+    margin-right: calc(50% - 219px);
   }
   .honeycomb__placeholder:nth-child(7n+7), .honeycomb__placeholder:nth-child(7n+9), .honeycomb__placeholder:nth-child(7n+11) {
     display: block;

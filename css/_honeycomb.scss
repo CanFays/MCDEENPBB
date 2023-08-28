@@ -2,9 +2,9 @@
 @use "fonts";
 @use "themes";
 
-$hexagon-width: 125px;
+$hexagon-width: 138px;
 $hexagon-height: $hexagon-width*.55;
-$hexagon-margin: 10px;
+$hexagon-margin: 12px;
 $hexagon-title-color:
 #ca503e;
 $hexagon-border-color: #FFC164;
@@ -58,8 +58,9 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
       color: $hexagon-title-color;
       font-family: 'Lilita';
       font-weight: 700;
-      font-size: 17px;
+      font-size: 18px;
       text-shadow: $shadowing;
+      letter-spacing: 1px;
       transition: opacity 350ms;
 
       > small {
