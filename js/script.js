@@ -18,7 +18,7 @@ const giveMeFun = (animationNameAndID) => {
 
 console.log('giveMeFun active');
 giveMeFun('mobile');
-// giveMeFun('bear');
+giveMeFun('bear');
 // giveMeFun('cat');
 // giveMeFun('watermelon');
 // giveMeFun('poele');
