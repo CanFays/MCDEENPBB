@@ -1,0 +1,73 @@
+@use "colors";
+
+.main__date-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section__date-content {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  font-family: "Medula";
+  font-size: 2rem;
+
+  img {
+    width: 100%;
+    min-width: 35%;
+    max-width: 100%;
+    height: auto;
+  }
+  .section__date-photoS {
+    border-radius: 20px 0;
+  }
+  .section__date-photoB {
+    border-radius: 0 20px;
+  }
+
+  .section__date-text {
+    margin: 2vh;
+  }
+}
+@media (max-width: 500px) {
+  .section__date-content {
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer horizontalement les éléments */
+    img {
+      max-width: 40%;
+      margin: 0 1vh;
+    }
+  }
+
+  #section__date-text {
+    order: 3;
+    width: 100%; /* Pour occuper la largeur complète */
+    margin-top: 20px; /* Espacement par rapport aux images */
+  }
+}
+
+
+.section__date--timer {
+  display: flex;
+  justify-content: space-around;
+  margin: 4vh;
+  width: 100%;
+
+  .yellow-btn {
+    border: solid 3px colors.$yellow;
+    border-radius: 12px;
+    flex: 1;
+    margin: 0 1vh;
+    padding: 1vh;
+    font-size: 0.75rem;
+  }
+
+  .section__date-number {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Medula";
+    color: colors.$brick;
+  }
+}

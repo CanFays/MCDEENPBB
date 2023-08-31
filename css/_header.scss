@@ -4,7 +4,6 @@
 
 header {
   @extend .green-theme;
-  padding: 2vh;
   border-radius: 12px 12px 0 0;
   display: grid;
 
@@ -13,6 +12,7 @@ header {
 
     img {
       width: 5rem;
+      padding-top: 2vh;
     }
     // .header__title {
     // }
@@ -22,4 +22,3 @@ header {
    color: colors.$dark-green;
   }
 }
-

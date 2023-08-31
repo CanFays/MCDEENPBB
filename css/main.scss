@@ -41,7 +41,8 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  // .main__content-padding {
-  //   padding: 5vh; l'enlever à footer
-  // }
+  .sections {
+    padding: 5vh;
+    margin: 0;
+  }
 }
