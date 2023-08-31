@@ -1,0 +1,24 @@
+@use "colors";
+@use "fonts";
+@use "themes";
+
+
+.main__date-section, .main__asked-section {
+  @extend .pink-theme;
+}
+
+.main__invitation-section {
+  @extend .white-theme;
+}
+
+.main__nav-section {
+  @extend .green-theme;
+}
+
+
+// .section__transition {
+//   max-height: 200px;
+//   width: 100%;
+//   height: auto;
+//   margin: 0 auto;
+// }

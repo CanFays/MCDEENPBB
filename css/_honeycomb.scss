@@ -20,10 +20,6 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
   box-sizing: border-box;
 }
 
-.main__nav-section {
-  @extend .green-theme;
-}
-
 .honeycomb {
   display: flex;
   flex-wrap: wrap;

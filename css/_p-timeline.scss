@@ -1,7 +1,14 @@
-$primary-color: #ee4d4d;
+@use "colors";
+@use "fonts";
+@use "themes";
+
+$primary-color: colors.$brick;
 $secondary-color: #2b2e48;
 $base-font-color: #726f77;
 $timeline-color: $primary-color;
+$cards-background-color: colors.$whitish;
+$font-color-title: colors.$whitish;
+$timeline-font: 'ZillaSlab';
 
 // Mixins and Placeholders
 %clearfix {
@@ -24,22 +31,23 @@ $timeline-color: $primary-color;
   -moz-box-sizing: border-box;
 }
 
-img {max-width: 100%;}
 
 .timeline-section {
   max-width: 1100px;
   margin: 0 auto;
+  img {max-width: 100%;}
 }
 
 h1, h2, h3, h4 {
   font: {
+    family: $timeline-font;
     weight: 500;
   }
 }
 
 // Timeline
 
-.section__timeline--styling {
+.section__timeline--styling { // #timeline
   width: 100%;
   margin: 30px auto;
   position: relative;
@@ -88,7 +96,7 @@ h1, h2, h3, h4 {
 
     .section__timeline-content {
       width: 45%;
-      background: #fff;
+      background: $cards-background-color;
       padding: 20px;
       @include prefix(box-shadow, 0 3px 0 rgba(0,0,0,0.1));
       @include prefix(border-radius, 5px);
@@ -97,7 +105,7 @@ h1, h2, h3, h4 {
       h2 {
         padding: 15px;
         background: $timeline-color;
-        color: #fff;
+        color: $font-color-title;
         margin: -20px -20px 0 -20px;
         font-weight: 300;
         @include prefix(border-radius, 3px 3px 0 0);
@@ -131,7 +139,7 @@ h1, h2, h3, h4 {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 450px) {
   .section__timeline--styling {
     margin: 30px;
     padding: 0px;
