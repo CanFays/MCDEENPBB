@@ -31,23 +31,6 @@
     margin: 2vh;
   }
 }
-@media (max-width: 500px) {
-  .section__date-content {
-    flex-wrap: wrap;
-    justify-content: center; /* Centrer horizontalement les éléments */
-    img {
-      max-width: 40%;
-      margin: 0 1vh;
-    }
-  }
-
-  #section__date-text {
-    order: 3;
-    width: 100%; /* Pour occuper la largeur complète */
-    margin-top: 20px; /* Espacement par rapport aux images */
-  }
-}
-
 
 .section__date--timer {
   display: flex;
@@ -69,5 +52,22 @@
     font-weight: bold;
     font-family: "Medula";
     color: colors.$brick;
+  }
+}
+
+@media (max-width: 500px) {
+  .section__date-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    img {
+      max-width: 40%;
+      margin: 0 1vh;
+    }
+  }
+
+  #section__date-text {
+    order: 3;
+    width: 100%;
+    margin-top: 20px;
   }
 }
