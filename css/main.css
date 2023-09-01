@@ -407,6 +407,54 @@ h1, h2, h3, h4 {
     left: 0;
   }
 }
+:root {
+  --circle-diameter: 30vh;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 640px;
+  scroll-behavior: smooth;
+}
+.map-section .section__map-text {
+  margin-bottom: 5vh;
+}
+
+.section__google-map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  overflow: hidden;
+  border-radius: var(--circle-diameter);
+  transition: 5000ms;
+  cursor: grab;
+}
+
+.section__google-map .section__map-frame {
+  width: 100vw;
+  height: 100vh;
+}
+
+.section__google-map iframe {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: visibleStroke;
+}
+
+.section__google-map:hover {
+  width: 80vw;
+  height: 60vh;
+  border-radius: 0;
+}
+
 html {
   padding: 2vh;
 }
