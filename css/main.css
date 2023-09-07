@@ -455,6 +455,95 @@ h1, h2, h3, h4 {
   border-radius: 0;
 }
 
+.hidden {
+  display: none;
+}
+
+.notice-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__notice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__notice-image-container img {
+  max-width: 40vh;
+  max-height: 100%;
+}
+
+@media (min-width: 700px) {
+  .section__notice {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .section__notice-image-container {
+    margin: 0;
+    padding: 0;
+  }
+  .section__notice-image-container img {
+    max-width: 45%;
+    max-height: 45%;
+  }
+}
+.notice-btn {
+  color: #18485e;
+  background: #E8E6DA;
+  width: 31px;
+  height: 31px;
+  margin-top: 3vh;
+  border: 1px solid #E8E6DA;
+  border-radius: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  cursor: pointer;
+  transition: all 0.23s;
+  box-shadow: 0 0 0 0px #FFC164;
+}
+.notice-btn:hover {
+  box-shadow: 0 0 0 10px rgba(232, 194, 99, 0.146);
+  left: 34px;
+}
+.notice-btn:hover:before {
+  width: 40px;
+  left: -40px;
+}
+.notice-btn.next {
+  left: auto;
+  right: 30px;
+}
+.notice-btn.next:hover {
+  right: 34px;
+}
+.notice-btn.next:hover:before {
+  width: 40px;
+  right: -40px;
+}
+.notice-btn.next:before {
+  left: auto;
+  right: -33px;
+}
+.notice-btn:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: #E8E6DA;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -32px;
+  transition: all 0.2s;
+}
+
 html {
   padding: 2vh;
 }
