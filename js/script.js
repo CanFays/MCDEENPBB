@@ -1,6 +1,7 @@
-console.log('script.js chargé');
+console.log('script.js loaded');
 
-// Date section
+// Date section: timer
+
 const timeLeft = () => {
   const weddingDate = new Date(2023, 8, 16, 11);
   const today = new Date();
@@ -44,17 +45,105 @@ const countdown = () => {
 countdown();
 
 
-// Asked-section: loading of the clicked partial
+
+
+
+
+
+
+
+
+
+
+// Notice section: LOAD CHECKING
+// needs to stay above loading asked section: depends on its addEventListener
+
+const isNoticeSectionLoaded = () => {
+  const noticeSection = document.querySelector('.notice-section');
+  return noticeSection !== null;
+}
+
+const waitForNoticeSection = (callback) => {
+  const checkInterval = 100;
+  const maxAttempts = 50;
+  let attempts = 0;
+
+  const checkLoaded = () => {
+    if (isNoticeSectionLoaded() || attempts >= maxAttempts) {
+      clearInterval(interval);
+      callback(isNoticeSectionLoaded());
+    }
+    attempts++;
+  }
+  const interval = setInterval(checkLoaded, checkInterval);
+}
+
+waitForNoticeSection((isLoaded) => {
+  if (isLoaded) {
+    console.log('.notice-section loaded.');
+    const noticeSection = document.querySelector('.notice-section');
+    noticeSection.addEventListener('click', (event) => {
+      showChosenImage(event);
+    });
+  } else {
+    console.log('notice section not loaded');
+  }
+});
+
+
+// Notice section: GALLERY
+
+const showChosenImage = (event) => {
+  const noticeImages = document.querySelectorAll('.section__notice-image-container');
+  const noticeImagesArray = Array.from(noticeImages);
+  const currentImage = document.querySelector('.section__notice-image-container:not(.hidden)');
+  const currentImageIndex = noticeImagesArray.indexOf(currentImage);
+  const nextImage = noticeImagesArray[currentImageIndex + 1];
+  const previousImage = noticeImagesArray[currentImageIndex - 1];
+  const noticeNextBtn = document.querySelector('.section__notice--next-btn');
+  const noticePrevBtn = document.querySelector('.section__notice--prev-btn');
+
+  if (event.target === noticePrevBtn && currentImageIndex > 0) {
+    previousImage.classList.remove('hidden');
+    currentImage.classList.add('hidden');
+  } else if (event.target === noticeNextBtn && currentImageIndex < noticeImagesArray.length - 1) {
+    nextImage.classList.remove('hidden');
+    currentImage.classList.add('hidden');
+  }
+}
+
+const noticeSectionListener = () => {
+  const noticeSection = document.getElementById('section__notice');
+  const noticePrevBtn = document.querySelector('.notice-section');
+  noticeSection.addEventListener('click', (event) => {
+    showChosenImage(event);
+  });
+}
+
+
+// Asked-section: loading of the partial after click
+
+// needs to stay behind notice section, wich depends on fetchAskedPartial
+// to do: insert bg and transition of added section insted of already have it in html
 
 const sectionsList = ['map', 'notice', 'contact', 'photos', 'timeline']
+// add every honeycomb section here + its id (same word) in html
 const navListening = document.querySelectorAll('.nav--listening');
 
 
 const fetchAskedPartial = (sectionName) => {
-const askedSection = document.getElementById('main__asked-section');
-          fetch(`./_${sectionName}.html`)
-          .then(response => response.text())
-          .then(content => askedSection.innerHTML = content);
+  const askedSection = document.getElementById('main__asked-section');
+  fetch(`./_${sectionName}.html`)
+  .then(response => response.text())
+  .then(content => askedSection.innerHTML = content);
+
+  if (sectionName === 'notice') {
+    waitForNoticeSection((isLoaded) => {
+      if (isLoaded) {
+        noticeSectionListener();
+      }
+    });
+  }
 }
 
 const loadingAskedPartial = (sectionWanted) => {
@@ -80,6 +169,7 @@ navListening.forEach((nav) => {
 });
 
 
+
 // Lottie animation reader
 
 const giveMeFun = (animationNameAndID) => {
@@ -87,6 +177,7 @@ const giveMeFun = (animationNameAndID) => {
   const location = document.getElementById(animationNameAndID);
 
   const animation = bodymovin.loadAnimation({
+    // Uncaught ReferenceError: bodymovin is not defined
     container: location,
     renderer: 'svg',
     loop: true,
@@ -106,11 +197,7 @@ giveMeFun('mobile');
 
 
 
-// Notice section: turning like pages of a book
 
 
 
-
-
-
-      // hamburger menu
+// hamburger menu
