@@ -162,7 +162,7 @@ const isolateClickedClass = (clk) => {
 navListening.forEach((nav) => {
   nav.addEventListener('click', event => {
     const clickedElement = event.target;
-    console.log("clickedElement", clickedElement);
+    console.log("clickedElement in navListening", clickedElement);
     const clickedClass = isolateClickedClass(clickedElement);
     loadingAskedPartial(clickedClass);
   });
