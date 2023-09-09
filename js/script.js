@@ -81,10 +81,11 @@ const waitForNoticeSection = (callback) => {
 waitForNoticeSection((isLoaded) => {
   if (isLoaded) {
     console.log('.notice-section loaded.');
-    const noticeSection = document.querySelector('.notice-section');
-    noticeSection.addEventListener('click', (event) => {
-      showChosenImage(event);
-    });
+    // const noticeSection = document.querySelector('.notice-section');
+    // noticeSection.addEventListener('click', (event) => {
+    //   console.log('j arrive jusqu ici: waitfornoticeSectionListener');
+    // showChosenImage(event);
+    // });
   } else {
     console.log('notice section not loaded');
   }
@@ -114,7 +115,7 @@ const showChosenImage = (event) => {
 
 const noticeSectionListener = () => {
   const noticeSection = document.getElementById('section__notice');
-  const noticePrevBtn = document.querySelector('.notice-section');
+  // const noticePrevBtn = document.querySelector('.notice-section');
   noticeSection.addEventListener('click', (event) => {
     showChosenImage(event);
   });
@@ -132,17 +133,20 @@ const navListening = document.querySelectorAll('.nav--listening');
 
 
 const fetchAskedPartial = (sectionName) => {
-  const askedSection = document.getElementById('main__asked-section');
-  fetch(`./_${sectionName}.html`)
-  .then(response => response.text())
-  .then(content => askedSection.innerHTML = content);
+  if (sectionsList.includes(sectionName)) {
+    const askedSection = document.getElementById('main__asked-section');
+    fetch(`./_${sectionName}.html`)
+    .then(response => response.text())
+    .then(content => askedSection.innerHTML = content);
 
-  if (sectionName === 'notice') {
-    waitForNoticeSection((isLoaded) => {
-      if (isLoaded) {
-        noticeSectionListener();
-      }
-    });
+    if (sectionName === 'notice') {
+      waitForNoticeSection((isLoaded) => {
+        if (isLoaded) {
+          noticeSectionListener();
+        }
+      });
+    }
+    askedSection.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 }
 
@@ -162,7 +166,7 @@ const isolateClickedClass = (clk) => {
 navListening.forEach((nav) => {
   nav.addEventListener('click', event => {
     const clickedElement = event.target;
-    console.log("clickedElement", clickedElement);
+    console.log("clickedElement in navListening", clickedElement);
     const clickedClass = isolateClickedClass(clickedElement);
     loadingAskedPartial(clickedClass);
   });
