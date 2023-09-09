@@ -1,11 +1,10 @@
 // ajouter les @import des fichiers scss
 @use "colors";
-@use "fonts";
 @use "themes";
 
 footer {
   @extend .green-theme;
   padding: 5vh;
   border-radius: 0 0 12px 12px;
-
+  background: no-repeat center/300% url("../elements/images/GGG.svg");
 }

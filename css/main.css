@@ -132,6 +132,7 @@ header .header__nav {
 footer {
   padding: 5vh;
   border-radius: 0 0 12px 12px;
+  background: no-repeat center/300% url("../elements/images/GGG.svg");
 }
 
 .section__transition {
