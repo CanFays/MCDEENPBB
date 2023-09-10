@@ -1,5 +1,4 @@
 @use "colors";
-@use "fonts";
 @use "themes";
 
 $hexagon-width: 138px;
@@ -14,11 +13,6 @@ $shadowing: 0 0 0.5em #040404;
 $honeycomb-max-width: 1200px;
 $viewport-thereshold: $hexagon-width + $hexagon-margin;
 
-
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
 
 .honeycomb {
   display: flex;
@@ -36,11 +30,11 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
     max-width: $hexagon-width;
     height: $hexagon-height;
     margin: $hexagon-height/2.1 $hexagon-margin/2 $hexagon-margin;
-    position: relative;
     padding: 0.5em;
-
-    text-align: center;
+    position: relative;
     z-index: 1;
+    text-align: center;
+    cursor: pointer;
 
 
     &__title {

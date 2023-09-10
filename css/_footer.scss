@@ -4,7 +4,10 @@
 
 footer {
   @extend .green-theme;
+  font-size: 3vw;
   padding: 5vh;
+  width: 100%;
+  height: fit-content;
   border-radius: 0 0 12px 12px;
-  background: no-repeat center/300% url("../elements/images/GGG.svg");
+  background: url("../elements/images/GGG.svg");
 }

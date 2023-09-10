@@ -11,14 +11,17 @@
   display: flex;
   flex: 1;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-family: "Medula";
-  font-size: 2rem;
+  font-size: 5vw;
 
   img {
-    width: 100%;
-    min-width: 35%;
-    max-width: 100%;
+    width: 35%;
+    min-width: 130px;
+    max-width: 600px;
     height: auto;
+    margin-top: 6vh;
   }
   .section__date-photoS {
     border-radius: 20px 0;
@@ -28,14 +31,15 @@
   }
 
   .section__date-text {
-    margin: 2vh;
+    padding: 2vh;
+    font-size: 3,5vw;
   }
 }
 
 .section__date--timer {
   display: flex;
   justify-content: space-around;
-  margin: 4vh;
+  margin: 6vh;
   width: 100%;
 
   .yellow-btn {
@@ -44,11 +48,11 @@
     flex: 1;
     margin: 0 1vh;
     padding: 1vh;
-    font-size: 0.75rem;
+    font-size: 2vw;
   }
 
   .section__date-number {
-    font-size: 2rem;
+    font-size: 8vw;
     font-weight: bold;
     font-family: "Medula";
     color: colors.$brick;
@@ -60,7 +64,7 @@
     flex-wrap: wrap;
     justify-content: center;
     img {
-      max-width: 40%;
+      max-width: 40%, 650px;
       margin: 0 1vh;
     }
   }
