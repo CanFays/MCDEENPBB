@@ -54,7 +54,7 @@ header .header__nav {
   top: -100px;
   z-index: 100;
   width: 200px;
-  height: 8vh;
+  height: 20vh;
   background: #f2f2f2;
   border-radius: 50% 50% 50% 50%;
   transition: 0.5s ease-in-out;
