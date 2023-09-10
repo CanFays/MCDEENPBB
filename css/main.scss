@@ -16,6 +16,9 @@
 @use "p-map";
 @use "p-notice";
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 html {
   background-color: colors.$HTML-color;
@@ -28,14 +31,20 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+  // Text styles
   text-align: center;
   font-family: 'ZillaSlab';
+  font-size: 3vw;
   ul {
     list-style: none;
   }
   a {
     text-decoration: none;
     color: inherit;
+  }
+  .underline {
+    text-decoration: underline dotted;
   }
 }
 
