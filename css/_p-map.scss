@@ -40,7 +40,7 @@
     pointer-events: visibleStroke;
 }
 
-.section__google-map:hover {
+.section__google-map:hover, .section__google-map:active {
     width: 80vw;
     height: 60vh;
     border-radius: 0;
