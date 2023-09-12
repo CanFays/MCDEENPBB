@@ -1,17 +1,17 @@
 @use "colors";
 @use "themes";
 
-$hexagon-width: 148px;
+$hexagon-width: 178px;
 $hexagon-height: $hexagon-width*.55;
 $hexagon-margin: 12px;
 $hexagon-title-color: #ca503e;
-$hexagon-border-color: #FFC164;
+$hexagon-border-color: colors.$whitish;
 $hexagon-border-color--hover: #82978D;
 $hexagon-image-color: #bbb2ceb6;
-$shadowing: -2px -3px 0 #4810103f,
-2px -3px 0 #4810103f,
--2px 3px 0 #4810103f,
-2px 3px 0 #4810103f;
+$shadowing: -2px -3px 0 colors.$whitish,
+2px -3px 0 colors.$whitish,
+-2px 3px 0 colors.$whitish,
+2px 3px 0 colors.$whitish;
 $honeycomb-max-width: 1200px;
 $viewport-thereshold: $hexagon-width + $hexagon-margin;
 
@@ -50,11 +50,11 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
       color: $hexagon-title-color;
       font-family: 'Lilita';
       font-weight: 700;
-      font-size: 20px;
+      font-size: 21px;
       text-shadow: $shadowing;
       letter-spacing: 1,5px;
       transition: opacity 350ms;
-      background: radial-gradient( rgba(80, 18, 18, 0.686) 0%, transparent 80%);
+      background: radial-gradient( colors.$whitish 0%, transparent 80%);
 
       > small {
         font-weight: 300;
