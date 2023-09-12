@@ -1,5 +1,6 @@
 console.log('script.js loaded');
 
+
 // Date section: timer
 
 const timeLeft = () => {
@@ -46,15 +47,6 @@ countdown();
 
 
 
-
-
-
-
-
-
-
-
-
 // Notice section: LOAD CHECKING
 // needs to stay above loading asked section: depends on its addEventListener
 
@@ -77,20 +69,6 @@ const waitForNoticeSection = (callback) => {
   }
   const interval = setInterval(checkLoaded, checkInterval);
 }
-
-waitForNoticeSection((isLoaded) => {
-  if (isLoaded) {
-    console.log('.notice-section loaded.');
-    // const noticeSection = document.querySelector('.notice-section');
-    // noticeSection.addEventListener('click', (event) => {
-    //   console.log('j arrive jusqu ici: waitfornoticeSectionListener');
-    // showChosenImage(event);
-    // });
-  } else {
-    console.log('notice section not loaded');
-  }
-});
-
 
 // Notice section: GALLERY
 
@@ -115,29 +93,24 @@ const showChosenImage = (event) => {
 
 const noticeSectionListener = () => {
   const noticeSection = document.getElementById('section__notice');
-  // const noticePrevBtn = document.querySelector('.notice-section');
   noticeSection.addEventListener('click', (event) => {
     showChosenImage(event);
   });
 }
 
 
-// Asked-section: loading of the partial after click
 
+// Asked-section: loading of the partial after click
 // needs to stay behind notice section, wich depends on fetchAskedPartial
-// to do: insert bg and transition of added section insted of already have it in html
 
 const sectionsList = ['map', 'notice', 'contact', 'photos', 'timeline']
-// add every honeycomb section here + its id (same word) in html
+// add every honeycomb section here + its same word class name in html
 const navListening = document.querySelectorAll('.nav--listening');
-
 
 const fetchAskedPartial = (sectionName) => {
   if (sectionsList.includes(sectionName)) {
     const askedSection = document.getElementById('main__asked-section');
-    // hidden-bg-partial hidden
     const hiddenBg = document.querySelectorAll('.hidden-bg-partial');
-    console.log("hiddenBg", hiddenBg);
 
     fetch(`./_${sectionName}.html`)
     .then(response => response.text())
@@ -152,7 +125,6 @@ const fetchAskedPartial = (sectionName) => {
     }
 
     hiddenBg.forEach((bg) => {
-      console.log("bg in hiddenBg", bg);
       bg.classList.remove('hidden');
     });
     askedSection.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
@@ -167,7 +139,6 @@ const loadingAskedPartial = (sectionWanted) => {
 
 const isolateClickedClass = (clk) => {
   const clickedClasses = Array.from(clk.classList);
-  console.log("array clickedClasses", clickedClasses);
   const clickedClass = clickedClasses.find(cls => sectionsList.includes(cls));
   return clickedClass;
 }
@@ -175,7 +146,6 @@ const isolateClickedClass = (clk) => {
 navListening.forEach((nav) => {
   nav.addEventListener('click', event => {
     const clickedElement = event.target;
-    console.log("clickedElement in navListening", clickedElement);
     const clickedClass = isolateClickedClass(clickedElement);
     loadingAskedPartial(clickedClass);
   });
