@@ -133,6 +133,9 @@ footer {
   border-radius: 0 0 12px 12px;
   background: url("../elements/images/GGG.svg");
 }
+footer h1 {
+  font-weight: bold;
+}
 
 .section__transition {
   margin: -100 auto;

@@ -1,5 +1,4 @@
 @use "colors";
-@use "fonts";
 @use "themes";
 
 $primary-color: colors.$brick;
@@ -47,7 +46,8 @@ h1, h2, h3, h4 {
 
 // Timeline
 
-.section__timeline--styling { // #timeline
+.section__timeline--styling {
+// #timeline
   width: 100%;
   margin: 30px auto;
   position: relative;

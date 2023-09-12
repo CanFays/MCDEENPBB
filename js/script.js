@@ -135,6 +135,10 @@ const navListening = document.querySelectorAll('.nav--listening');
 const fetchAskedPartial = (sectionName) => {
   if (sectionsList.includes(sectionName)) {
     const askedSection = document.getElementById('main__asked-section');
+    // hidden-bg-partial hidden
+    const hiddenBg = document.querySelectorAll('.hidden-bg-partial');
+    console.log("hiddenBg", hiddenBg);
+
     fetch(`./_${sectionName}.html`)
     .then(response => response.text())
     .then(content => askedSection.innerHTML = content);
@@ -146,6 +150,11 @@ const fetchAskedPartial = (sectionName) => {
         }
       });
     }
+
+    hiddenBg.forEach((bg) => {
+      console.log("bg in hiddenBg", bg);
+      bg.classList.remove('hidden');
+    });
     askedSection.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 }
