@@ -3,7 +3,6 @@
 
 footer {
   @extend .green-theme;
-  font-size: 3vw;
   padding: 5vh;
   width: 100%;
   height: fit-content;
@@ -13,7 +12,11 @@ footer {
   h1 {
     font-weight: bold;
     & h2 {
-      margin-bottom: -30px;
+      font-size: 3vw;
     }
   }
+}
+
+.footer__text {
+  padding-top: 12vw;
 }
