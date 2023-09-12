@@ -131,10 +131,14 @@ footer {
   width: 100%;
   height: fit-content;
   border-radius: 0 0 12px 12px;
-  background: url("../elements/images/GGG.svg");
+  background: url("../elements/images/footer-BG.svg");
+  background-size: cover;
 }
 footer h1 {
   font-weight: bold;
+}
+footer h1 h2 {
+  margin-bottom: -30px;
 }
 
 .section__transition {
@@ -175,9 +179,9 @@ footer h1 {
   font-family: "Lilita";
   font-weight: 700;
   font-size: 20px;
+  text-shadow: -2px -3px 0 rgba(72, 16, 16, 0.2470588235), 2px -3px 0 rgba(72, 16, 16, 0.2470588235), -2px 3px 0 rgba(72, 16, 16, 0.2470588235), 2px 3px 0 rgba(72, 16, 16, 0.2470588235);
   letter-spacing: 1, 5px;
   transition: opacity 350ms;
-  text-shadow: -2px -3px 0 rgba(72, 16, 16, 0.2470588235), 2px -3px 0 rgba(72, 16, 16, 0.2470588235), -2px 3px 0 rgba(72, 16, 16, 0.2470588235), 2px 3px 0 rgba(72, 16, 16, 0.2470588235);
   background: radial-gradient(rgba(80, 18, 18, 0.686) 0%, transparent 80%);
 }
 .honeycomb-cell__title > small {
@@ -206,7 +210,7 @@ footer h1 {
   transform: scale(1.055);
 }
 .honeycomb-cell::after {
-  background: #bbb2ce;
+  background: rgba(187, 178, 206, 0.7137254902);
   opacity: 0.5;
   transition: opacity 350ms;
 }

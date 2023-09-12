@@ -7,8 +7,11 @@ $hexagon-margin: 12px;
 $hexagon-title-color: #ca503e;
 $hexagon-border-color: #FFC164;
 $hexagon-border-color--hover: #82978D;
-$hexagon-image-color: #bbb2ce;
-$shadowing: 0 0 0.2em #040404;
+$hexagon-image-color: #bbb2ceb6;
+$shadowing: -2px -3px 0 #4810103f,
+2px -3px 0 #4810103f,
+-2px 3px 0 #4810103f,
+2px 3px 0 #4810103f;
 $honeycomb-max-width: 1200px;
 $viewport-thereshold: $hexagon-width + $hexagon-margin;
 
@@ -48,21 +51,10 @@ $viewport-thereshold: $hexagon-width + $hexagon-margin;
       font-family: 'Lilita';
       font-weight: 700;
       font-size: 20px;
-      // text-shadow: $shadowing;
+      text-shadow: $shadowing;
       letter-spacing: 1,5px;
       transition: opacity 350ms;
-
-
-
-      text-shadow:
-      -2px -3px 0 #4810103f,
-      2px -3px 0 #4810103f,
-      -2px 3px 0 #4810103f,
-      2px 3px 0 #4810103f;
-
       background: radial-gradient( rgba(80, 18, 18, 0.686) 0%, transparent 80%);
-
-
 
       > small {
         font-weight: 300;
