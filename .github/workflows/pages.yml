@@ -1,28 +1,31 @@
-# name: Pages
+name: Pages
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - gh-pages
 
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Checkout
-#         uses: actions/checkout@v2
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
 
-#       - name: Install dependencies
-#         run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-#       - name: Build
-#         run: yarn run build
+      - name: Build
+        run: yarn run build
 
-#       - name: Deploy
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           target-branch: gh-pages
-#           build-dir: build
+      - name: Install Sass
+        run: yarn install -g sass
 
-# include:
-#     - html
+      - name: Generate your content
+        run: sass --watch
+
+      - name: Deploy
+        uses: rayluo/github-pages-overwriter@v1.3
+        with:
+          target-branch: gh-pages
+          source-directory: ./html
