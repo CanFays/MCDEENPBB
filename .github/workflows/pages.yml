@@ -1,28 +1,28 @@
-name: Pages
+# name: Pages
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+#       - name: Install dependencies
+#         run: yarn install
 
-      - name: Build
-        run: npm run build
+#       - name: Build
+#         run: yarn run build
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          target-branch: gh-pages
-          build-dir: build
+#       - name: Deploy
+#         uses: peaceiris/actions-gh-pages@v3
+#         with:
+#           target-branch: gh-pages
+#           build-dir: build
 
-include:
-    - html
+# include:
+#     - html
