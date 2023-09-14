@@ -27,5 +27,5 @@ jobs:
       - name: Deploy
         uses: rayluo/github-pages-overwriter@v1.3
         with:
-          target-branch: gh-pages
+          # target-branch: gh-pages
           source-directory: ./html
