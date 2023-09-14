@@ -12,17 +12,17 @@ jobs:
       - name: Check out
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: yarn install
+      # - name: Install dependencies
+      #   run: yarn install
 
-      - name: Build
-        run: yarn run build
+      # - name: Build
+      #   run: yarn run build
 
-      - name: Install Sass
-        run: yarn install -g sass
+      # - name: Install Sass
+      #   run: yarn install -g sass
 
-      - name: Generate your content
-        run: sass --watch
+      # - name: Generate your content
+      #   run: sass --watch
 
       - name: Deploy
         uses: rayluo/github-pages-overwriter@v1.3
