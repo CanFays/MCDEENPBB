@@ -55,7 +55,6 @@ header .header__nav {
   z-index: 100;
   width: 200px;
   height: 20vh;
-  background: #f2f2f2;
   border-radius: 50% 50% 50% 50%;
   transition: 0.5s ease-in-out;
   cursor: pointer;
@@ -90,7 +89,7 @@ header .header__nav {
   display: none;
 }
 .header__label input:checked + .header__menu {
-  box-shadow: 0 0 0 100vw #f2f2f2;
+  box-shadow: 0 0 0 100vw #B5C9C0;
   border-radius: 50px;
 }
 .header__label input:checked + .header__menu .header__hamburger {
