@@ -21,14 +21,15 @@ const timeCalculator = (timeLeft) => {
   const minutesLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
   const secondsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-  putDays.innerHTML = daysLeft;
-  putHours.innerHTML = hoursLeft;
-  putMinutes.innerHTML = minutesLeft;
-  putSeconds.innerHTML = secondsLeft;
+  putDays.innerHTML = Math.abs(daysLeft);
+  putHours.innerHTML = Math.abs(hoursLeft);
+  putMinutes.innerHTML = Math.abs(minutesLeft);
+  putSeconds.innerHTML = Math.abs(secondsLeft);
 }
 
 const goodTimingText = (timeLeft) => {
   const putBeforeOrAfter = document.getElementById('before-after');
+  console.log("timeleft est négatif?", timeLeft < 0, timeLeft);
   if (timeLeft < 0) {
     putBeforeOrAfter.innerHTML = 'depuis';
   } else {
@@ -40,7 +41,7 @@ const countdown = () => {
   setInterval(() => {
     timeCalculator(timeLeft());
   }, 1000);;
-  goodTimingText();
+  goodTimingText(timeLeft());
 }
 
 countdown();
@@ -103,7 +104,7 @@ const noticeSectionListener = () => {
 // Asked-section: loading of the partial after click
 // needs to stay behind notice section, wich depends on fetchAskedPartial
 
-const sectionsList = ['map', 'notice', 'contact', 'photos', 'timeline']
+const sectionsList = ['map', 'notice', 'contact', 'photos', 'timeline', 'speech', 'guestbook']
 // add every honeycomb section here + its same word class name in html
 const navListening = document.querySelectorAll('.nav--listening');
 
