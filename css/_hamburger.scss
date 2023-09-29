@@ -97,3 +97,12 @@ $menu-bg: colors.$whitish;
     cursor: pointer;
   }
 }
+
+@media (min-width: 900px) {
+  .header__label {
+    .header__menu {
+      right: -50px;
+      top: -50px;
+    }
+  }
+}
