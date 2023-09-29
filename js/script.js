@@ -161,7 +161,6 @@ const giveMeFun = (animationNameAndID) => {
   const location = document.getElementById(animationNameAndID);
 
   const animation = bodymovin.loadAnimation({
-    // Uncaught ReferenceError: bodymovin is not defined
     container: location,
     renderer: 'svg',
     loop: true,
@@ -171,17 +170,9 @@ const giveMeFun = (animationNameAndID) => {
   return animation;
 }
 
-console.log('giveMeFun active');
-giveMeFun('mobile');
+// giveMeFun('mobile');
 // giveMeFun('bear');
 // giveMeFun('cat');
 // giveMeFun('watermelon');
 // giveMeFun('poele');
 // giveMeFun('calandar');
-
-
-
-
-
-
-// hamburger menu
