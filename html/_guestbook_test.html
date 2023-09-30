@@ -1,0 +1,99 @@
+<!-- HTML -->
+    <div class="image-grid">
+        <div class="image-container">
+            <img src="image1.jpg" alt="Image 1">
+        </div>
+        <!-- Répétez cette structure pour chaque image -->
+    </div>
+    <div class="modal" id="image-modal">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <img class="modal-content" id="modal-content" src="">
+        <a href="#" download class="download-link" id="download-link">Télécharger</a>
+    </div>
+
+    <!-- CSS -->
+
+    /* Styles pour la grille d'images */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-container {
+    flex: 1;
+    margin: 10px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Styles pour la fenêtre modale */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+}
+
+.close-modal {
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.download-link {
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    text-decoration: none;
+    display: none;
+}
+
+
+<!-- JS -->
+const imageModal = document.getElementById('image-modal');
+const closeModal = document.getElementById('close-modal');
+const modalContent = document.getElementById('modal-content');
+const downloadLink = document.getElementById('download-link');
+
+// Fonction pour afficher la fenêtre modale avec l'image agrandie
+function openModal(imageSrc) {
+    modalContent.src = imageSrc;
+    imageModal.style.display = 'block';
+    downloadLink.href = imageSrc;
+    downloadLink.style.display = 'block';
+}
+
+// Fermer la fenêtre modale
+closeModal.addEventListener('click', () => {
+    imageModal.style.display = 'none';
+});
+
+// Attacher un gestionnaire de clic à chaque image
+const imageContainers = document.querySelectorAll('.image-container');
+
+imageContainers.forEach(container => {
+    container.addEventListener('click', () => {
+        const image = container.querySelector('img');
+        openModal(image.src);
+    });
+});
