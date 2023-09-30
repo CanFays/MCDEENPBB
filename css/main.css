@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .alert {
   color: #CA503E;
 }
@@ -629,6 +630,60 @@ h1, h2, h3, h4 {
   transform: translateY(-50%);
   left: -32px;
   transition: all 0.2s;
+}
+
+/* Styles pour la grille d'images */
+.section__guestbook-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section__guestbook-container {
+  flex: 1;
+  margin: 10px;
+}
+.section__guestbook-container img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Styles pour la fenêtre modale */
+.section__guestbook-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.section__guestbook-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+}
+
+.section__guestbook-modal--close {
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.section__guestbook-modal--download-link {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  text-decoration: none;
+  display: none;
 }
 
 *, *::before, *::after {
