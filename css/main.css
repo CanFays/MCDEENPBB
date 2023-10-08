@@ -330,7 +330,7 @@ footer h1 h2 {
   }
   .section__date-content img {
     max-width: 40%, 650px;
-    margin: 0 1vh;
+    margin: 2px 1vh;
   }
   #section__date-text {
     order: 3;
@@ -629,6 +629,63 @@ h1, h2, h3, h4 {
   transform: translateY(-50%);
   left: -32px;
   transition: all 0.2s;
+}
+
+/* Grid styles */
+.section__guestbook-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.section__guestbook-container {
+  flex: 1;
+  margin: 10px;
+  max-width: 100px;
+}
+.section__guestbook-container img {
+  max-width: 100px;
+  height: auto;
+  border: 5px solid rgba(17, 67, 91, 0.6);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Modal styles */
+.section__guestbook-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.section__guestbook-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin: auto;
+  display: block;
+}
+
+.section__guestbook-modal--close {
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.section__guestbook-modal--download-link {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  text-decoration: none;
+  display: none;
 }
 
 *, *::before, *::after {
