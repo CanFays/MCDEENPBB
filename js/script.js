@@ -46,7 +46,7 @@ const countdown = () => {
 
 countdown();
 
-
+// ##########################################  LOADING SECTIONS ##########################################
 
 // Notice section: LOAD CHECKING
 // needs to stay above loading asked section: depends on its addEventListener
@@ -70,6 +70,9 @@ const waitForNoticeSection = (callback) => {
   }
   const interval = setInterval(checkLoaded, checkInterval);
 }
+
+// ########################################## </> LOADING SECTIONS ##########################################
+
 
 // Notice section: GALLERY
 

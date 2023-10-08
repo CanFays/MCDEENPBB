@@ -1,55 +1,66 @@
+@use "colors";
 
-    /* Styles pour la grille d'images */
-    .section__guestbook-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-  }
+$grid-bg: colors.$whitish;
+// $grid-border: colors.$blue-notice; + transparent;
 
-  .section__guestbook-container {
-      flex: 1;
-      margin: 10px;
-      img {
-          max-width: 100%;
-          height: auto;
-          cursor: pointer;
-      }
-  }
+  /* Grid styles */
+.section__guestbook-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  // background-color: $grid-bg;
+  // border: 8px solid $grid-border;
+  // border-radius: 12px;
+  // padding: 3%;
+}
+
+.section__guestbook-container {
+    flex: 1;
+    margin: 10px;
+    max-width: 100px;
+    img {
+        max-width: 100px;
+        height: auto;
+        border: 5px solid #11435b99;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+}
 
 
-  /* Styles pour la fenêtre modale */
-  .section__guestbook-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-  }
+  /* Modal styles */
+.section__guestbook-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
 
-  .section__guestbook-modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      margin: auto;
-      display: block;
-  }
+.section__guestbook-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    display: block;
+}
 
-  .section__guestbook-modal--close {
-      color: #fff;
-      font-size: 24px;
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      cursor: pointer;
-  }
+.section__guestbook-modal--close {
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
 
-  .section__guestbook-modal--download-link {
-      color: #fff;
-      font-size: 16px;
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      text-decoration: none;
-      display: none;
-  }
+.section__guestbook-modal--download-link {
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    text-decoration: none;
+    display: none;
+}

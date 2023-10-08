@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .alert {
   color: #CA503E;
 }
@@ -331,7 +330,7 @@ footer h1 h2 {
   }
   .section__date-content img {
     max-width: 40%, 650px;
-    margin: 0 1vh;
+    margin: 2px 1vh;
   }
   #section__date-text {
     order: 3;
@@ -632,24 +631,27 @@ h1, h2, h3, h4 {
   transition: all 0.2s;
 }
 
-/* Styles pour la grille d'images */
+/* Grid styles */
 .section__guestbook-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .section__guestbook-container {
   flex: 1;
   margin: 10px;
+  max-width: 100px;
 }
 .section__guestbook-container img {
-  max-width: 100%;
+  max-width: 100px;
   height: auto;
+  border: 5px solid rgba(17, 67, 91, 0.6);
+  border-radius: 12px;
   cursor: pointer;
 }
 
-/* Styles pour la fenêtre modale */
+/* Modal styles */
 .section__guestbook-modal {
   display: none;
   position: fixed;
