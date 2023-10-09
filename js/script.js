@@ -112,6 +112,18 @@ const noticeSectionListener = () => {
 // on lui enlève la classe hidden
 // on écoute l'évènement click sur le carousel
 
+const speechSectionListener = () => {
+  const speechListener = document.getElementsByClassName('section-speech__link');
+  // speechListener.addEventListener('click', (event) => {
+  // const clickedElement = event.target;
+  // const clickedClass = isolateClickedClass(clickedElement);
+  // const speechOpenContainer = document.querySelector(`.${clickedClass}`);
+  // speechOpenContainer.classList.remove('hidden');
+  // });
+}
+
+
+speechSectionListener();
 
 
 
