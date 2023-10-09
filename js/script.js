@@ -103,6 +103,20 @@ const noticeSectionListener = () => {
 }
 
 
+// Speech section carousel
+
+// ecouter event sur la classe section-speech__link
+// on récupère l'élément cliqué avec la classe section-speech__listened
+// on récupère l'id associé à cet élément
+// on trouve la classe section-speech--open-container qui a le même nom de classe que l'id
+// on lui enlève la classe hidden
+// on écoute l'évènement click sur le carousel
+
+
+
+
+
+
 
 // Asked-section: loading of the partial after click
 // needs to stay behind notice section, wich depends on fetchAskedPartial
