@@ -692,6 +692,13 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
+.speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 {
+  display: flex;
+}
+.speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 img {
+  width: 45%;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

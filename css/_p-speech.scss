@@ -3,3 +3,11 @@
 .section-speech__listened {
   cursor: pointer;
 }
+
+.speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 {
+  display: flex;
+
+  img {
+    width: 45%;
+  }
+}
