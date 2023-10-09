@@ -29,7 +29,6 @@ const timeCalculator = (timeLeft) => {
 
 const goodTimingText = (timeLeft) => {
   const putBeforeOrAfter = document.getElementById('before-after');
-  console.log("timeleft est négatif?", timeLeft < 0, timeLeft);
   if (timeLeft < 0) {
     putBeforeOrAfter.innerHTML = 'depuis';
   } else {
@@ -106,14 +105,17 @@ const noticeSectionListener = () => {
 // Speech section carousel
 
 // ecouter event sur la classe section-speech__link
-// on récupère l'élément cliqué avec la classe section-speech__listened
+// on récupère l'élément cliqué avec event.target
 // on récupère l'id associé à cet élément
 // on trouve la classe section-speech--open-container qui a le même nom de classe que l'id
 // on lui enlève la classe hidden
 // on écoute l'évènement click sur le carousel
 
 const speechSectionListener = () => {
+
+  console.log('speechSectionListener');
   const speechListener = document.getElementsByClassName('section-speech__link');
+  console.log(speechListener);
   // speechListener.addEventListener('click', (event) => {
   // const clickedElement = event.target;
   // const clickedClass = isolateClickedClass(clickedElement);
@@ -123,7 +125,7 @@ const speechSectionListener = () => {
 }
 
 
-speechSectionListener();
+
 
 
 
@@ -152,7 +154,9 @@ const fetchAskedPartial = (sectionName) => {
           noticeSectionListener();
         }
       });
-    }
+    } else if (sectionName === 'speech') {
+      speechSectionListener();
+    };
 
     hiddenBg.forEach((bg) => {
       bg.classList.remove('hidden');
