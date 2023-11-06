@@ -29,7 +29,6 @@ const timeCalculator = (timeLeft) => {
 
 const goodTimingText = (timeLeft) => {
   const putBeforeOrAfter = document.getElementById('before-after');
-  console.log("timeleft est négatif?", timeLeft < 0, timeLeft);
   if (timeLeft < 0) {
     putBeforeOrAfter.innerHTML = 'depuis';
   } else {
@@ -71,7 +70,6 @@ const waitForNoticeSection = (callback) => {
   const interval = setInterval(checkLoaded, checkInterval);
 }
 
-// ########################################## </> LOADING SECTIONS ##########################################
 
 
 // Notice section: GALLERY
@@ -102,15 +100,126 @@ const noticeSectionListener = () => {
   });
 }
 
+// CAROUSEL : speech section and guestbook section
 
-// Speech section carousel
+// const globalCarousel = (event, className) => {
+//   const btnPath = event.target;
+//   const currentImg = document.querySelector('.section-carousel__img:not(.hidden)');
+//   const imgCollectionArray = Array.from(document.querySelectorAll('.section-carousel__img'));
+//   let i = imgCollectionArray.indexOf(currentImg);
+
+//   if (btnPath.classList.contains('section__carousel--next-btn')) {
+//     i === imgCollectionArray.length - 1 ? i = 0 : i = i + 1;
+//   } else if (btnPath.classList.contains('section__carousel--prev-btn')) {
+//     i === 0 ? i = imgCollectionArray.length - 1 : i = i - 1;
+//   }
+
+//   currentImg.classList.add('hidden');
+//   imgCollectionArray[i].classList.remove('hidden');
+// }
+
+
+// const carouselSectionListener = () => {
+//   const carouselBtns = document.querySelectorAll('.carousel-btn');
+//   carouselBtns.forEach((button) => {
+//     button.addEventListener('click', (event) => {
+//       globalCarousel(event, className);
+//     });
+//   });
+// }
+
+
+// Speech section
+
+
+// on écoute la classe section-speech__listened, au click:
+  // hidden tous les éléments de classe section-speech--open-container
+  // pour chaque élément:
+    // on récupère l'id de l'élément cliqué
+    // on fait une collection avec tous les éléments de classe 'speech-${id}'
+    // on enlève la classe hidden à l'élément d'index 0
+    // on appelle la méthode qui écoute l'élément click sur le carousel
+    const isSpeechSectionLoaded = () => {
+      const SpeechSection = document.querySelector('.section-speech__listened');
+      return SpeechSection !== null;
+    }
+    
+    const waitForSpeechSection = (callback) => {
+      const checkInterval = 100;
+      const maxAttempts = 50;
+      let attempts = 0;
+    
+      const checkLoaded = () => {
+        if (isSpeechSectionLoaded() || attempts >= maxAttempts) {
+          clearInterval(interval);
+          callback(isSpeechSectionLoaded());
+        }
+        attempts++;
+      }
+      const interval = setInterval(checkLoaded, checkInterval);
+    }
+
+
+
+
+
+const speechSectionListener = () => {
+  console.log('inside speech section');
+
+  const speechListening = document.querySelectorAll('section-speech__listened')
+  
+  console.log(speechListening);
+  speechListening.forEach((link) => {
+    console.log('speech section écouter chaque élément:', link)
+    link.addEventListener('click', (event) => {
+      console.log('speech section écouter l évènement: ok')
+      const speechOpenContainers = document.querySelectorAll('.section-speech--open-container');
+      speechOpenContainers.forEach((container) => {
+        container.classList.add('hidden');
+      });
+      const clickedElement = event.target;
+      const clickedId = clickedElement.id;
+      const speechOpenContainer = document.querySelectorAll(`.speech-${clickedId}`);
+      speechOpenContainer[0].classList.remove('hidden');
+      // carouselSectionListener();
+    });
+  });
+};
+
+
+
+
+
+
+
+
+
 
 // ecouter event sur la classe section-speech__link
-// on récupère l'élément cliqué avec la classe section-speech__listened
+// on récupère l'élément cliqué avec event.target
 // on récupère l'id associé à cet élément
 // on trouve la classe section-speech--open-container qui a le même nom de classe que l'id
 // on lui enlève la classe hidden
 // on écoute l'évènement click sur le carousel
+
+// const speechSectionListener = () => {
+
+//   console.log('inside speechSectionListener');
+//   const speechListening = document.querySelectorAll('.section-speech__listened');
+//   console.log(speechListener);
+//   speechListener.forEach( (link) => {
+//     link.addEventListener('click', (event) => {
+//     console.log('inside speechSectionListener event');
+//     console.log(event.target);
+//     // const clickedElement = event.target;
+//     // const clickedClass = isolateClickedClass(clickedElement);
+//     // const speechOpenContainer = document.querySelector(`.${clickedClass}`);
+//     // speechOpenContainer.classList.remove('hidden');
+//     });
+//   });
+// }
+
+
 
 
 
@@ -140,7 +249,13 @@ const fetchAskedPartial = (sectionName) => {
           noticeSectionListener();
         }
       });
-    }
+    } else if (sectionName === 'speech') {
+      waitForSpeechSection((isLoaded) => {
+        if (isLoaded) {
+          speechSectionListener();
+        }
+      });
+    };
 
     hiddenBg.forEach((bg) => {
       bg.classList.remove('hidden');

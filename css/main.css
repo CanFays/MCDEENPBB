@@ -691,7 +691,37 @@ h1, h2, h3, h4 {
 .section-speech__listened {
   cursor: pointer;
 }
+.section-speech__listened:hover {
+  text-decoration: underline;
+}
 
+.speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 {
+  display: flex;
+}
+.speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 img {
+  width: 45%;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 button {
+  background-color: transparent;
+  color: #11435b;
+  font-weight: bolder;
+  border: none;
+  outline: none;
+  padding: 5%;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 {
+    flex-direction: column;
+  }
+  .speech-section--open-container1 + .speech-section--open-container2 + .speech-section--open-container3 img {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
