@@ -129,7 +129,7 @@ const noticeSectionListener = () => {
 // }
 
 
-// Speech section
+// Speech section  : LOAD CHECKING
 
 
 // on écoute la classe section-speech__listened, au click:
@@ -140,15 +140,16 @@ const noticeSectionListener = () => {
     // on enlève la classe hidden à l'élément d'index 0
     // on appelle la méthode qui écoute l'élément click sur le carousel
     const isSpeechSectionLoaded = () => {
-      const SpeechSection = document.querySelector('.section-speech__listened');
+      const SpeechSection = document.querySelectorAll('.section-speech__listened');
+      console.log('into the load checking of section-speech__listened elements:', SpeechSection);
       return SpeechSection !== null;
     }
-    
+
     const waitForSpeechSection = (callback) => {
       const checkInterval = 100;
       const maxAttempts = 50;
       let attempts = 0;
-    
+
       const checkLoaded = () => {
         if (isSpeechSectionLoaded() || attempts >= maxAttempts) {
           clearInterval(interval);
@@ -164,11 +165,11 @@ const noticeSectionListener = () => {
 
 
 const speechSectionListener = () => {
-  console.log('inside speech section');
+  console.log('inside speech listener');
 
-  const speechListening = document.querySelectorAll('section-speech__listened')
-  
-  console.log(speechListening);
+  const speechListening = document.querySelectorAll('.section-speech__listened')
+  console.log('speech elements listened', speechListening);
+
   speechListening.forEach((link) => {
     console.log('speech section écouter chaque élément:', link)
     link.addEventListener('click', (event) => {
@@ -185,42 +186,6 @@ const speechSectionListener = () => {
     });
   });
 };
-
-
-
-
-
-
-
-
-
-
-// ecouter event sur la classe section-speech__link
-// on récupère l'élément cliqué avec event.target
-// on récupère l'id associé à cet élément
-// on trouve la classe section-speech--open-container qui a le même nom de classe que l'id
-// on lui enlève la classe hidden
-// on écoute l'évènement click sur le carousel
-
-// const speechSectionListener = () => {
-
-//   console.log('inside speechSectionListener');
-//   const speechListening = document.querySelectorAll('.section-speech__listened');
-//   console.log(speechListener);
-//   speechListener.forEach( (link) => {
-//     link.addEventListener('click', (event) => {
-//     console.log('inside speechSectionListener event');
-//     console.log(event.target);
-//     // const clickedElement = event.target;
-//     // const clickedClass = isolateClickedClass(clickedElement);
-//     // const speechOpenContainer = document.querySelector(`.${clickedClass}`);
-//     // speechOpenContainer.classList.remove('hidden');
-//     });
-//   });
-// }
-
-
-
 
 
 
